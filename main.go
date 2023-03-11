@@ -7,14 +7,16 @@ import (
 )
 
 func main() {
-	err := database.DB.AutoMigrate(database.Chat{})
-	if err != nil {
-		return
-	}
+	database.DB.AutoMigrate(database.Chat{})
+	database.DB.AutoMigrate(database.User{})
+	database.DB.AutoMigrate(database.Message{})
+
 	engine := gin.Default()
 	engine.LoadHTMLGlob("resource/template/*.go.tmpl")
+
 	engine.GET("/", route.Index)
-	engine.GET("/login", route.Login)
+	engine.GET("/login", route.LoginGet)
+	engine.POST("/login", route.LoginPost)
 	engine.GET("/output.css", func(context *gin.Context) {
 		context.File("resource/template/output.css")
 	})

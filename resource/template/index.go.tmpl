@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link id="icon" rel="icon" type="image/svg"
+    <link rel="icon" type="image/svg"
           href="/icon">
     <title>GSB Chat | Index</title>
     <link rel="stylesheet" href="./output.css">
@@ -22,9 +22,9 @@
 </a>
 <div class="flex" style="justify-content: center;">
     <div class="border-slate-400 border-2 mt-10">
-        <h2><b class="ml-5 mr-5 round">Chats</b></h2>
+        <h2><b class="ml-5 mr-5 round">Chats</b></h2><br>
         {{range .Chats}}
-            <a href="/chat?id={{.ID}}">{{.Name}}</a>
+            <a href="/chat?id={{.ID}}">{{.Name}}</a><br>
         {{end}}
     </div>
     <div class="border-slate-400 border-2 mt-10 ml-10">

@@ -4,6 +4,5 @@ import "gorm.io/gorm"
 
 type Chat struct {
 	gorm.Model
-	Name     string
-	Messages string
+	Name string
 }
